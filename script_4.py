@@ -135,16 +135,24 @@ def printMinim():
     plt.show()
 
     b.clear()
+    
+# dummmy initial values for demo purposes
+n1 = -30
+n2 = 5
+m1 = -1
+m2 = 21
+p1 = -2
+p2 = 21
 
 
 cnt = 0
 end = False
-for i in range( -30, 5 ):
-    for j in range( -1, 21 ):
-        for w in range( -2, 21 ):
+for i in range( n1, n2 ):
+    for j in range( m1, m2 ):
+        for w in range( p1, p2 ):
             cnt += 1
             print( str(cnt) + ' ' + str( least ) + ' ' + str( mlx ) + ' ' + str(mly) + ' ' + str(mlz) + ' ' + str(rlx) + ' ' + str(rly) + ' ' + str(rlz) )
-            main( mx, (i / 10) * 10**27, mz, (j / 10) * 10**9, (w / 10) * 10**9, rz )
+            main( mx, (i / 10) * 10**28, mz, (j / 10) * 10**9, (w / 10) * 10**9, rz )
             if cnt == 500:
                 end = True
                 break
