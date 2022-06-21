@@ -1,10 +1,7 @@
 import matplotlib.pyplot as plt
 import magpylib as magpy
 import numpy as np
-from magpylib import Collection
 from matplotlib import pyplot as plt
-from scipy.spatial.transform import Rotation as R
-#from mpl_toolkits.basemap import Basemap
 import time
 import geopandas as gpd
 
@@ -22,15 +19,9 @@ for i in lt:
 for i in lg:
     long.append( float( i ) )
 
-def comp( x, y, z ):
-    return np.sqrt( x**2 + y**2 + z**2 )
-
-mx = -0.40e28  # in mT mm3 ?
+mx = -0.40e28  # in mT mm3 
 my =  -2.39e28
 mz = -7.04e28
-mt = comp( mx, my, mz )
-
-#print( mt )
 
 rx = -0.01e9 # in mm
 ry = -0.28e9
@@ -38,8 +29,8 @@ rz = 0.40e9
 
 x1 = magpy.misc.Dipole((mx, my, mz), (rx, ry, rz))
 
-xlist = np.linspace( -180, 180, 90 ) # longitudine
-ylist = np.linspace( -90, 90, 45 ) # latitudine
+xlist = np.linspace( -180, 180, 90 ) # longitude
+ylist = np.linspace( -90, 90, 45 ) # latitude
 X, Y = np.meshgrid( xlist, ylist )
 
 Z = X.copy()
@@ -78,11 +69,11 @@ for i in range( 0, 45 ):
                 longm = X[i][j]
 
 
-print( maxx ) # polul sud
+print( maxx ) # South pole
 print( latm )
 print( longm )
 print( '\n' )
-print( maxx2 ) # polul nord
+print( maxx2 ) # North pole
 print( latm2 )
 print( longm2 )
 
